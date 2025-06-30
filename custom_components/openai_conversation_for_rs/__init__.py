@@ -182,7 +182,7 @@ class AzureOpenAIAgent(conversation.AbstractConversationAgent):
                 system_datetime_prompt = prompt_generator.get_datetime_prompt()
                 system_entities_prompt = prompt_generator.get_entities_system_prompt()
                 system_services_prompt = prompt_generator.get_services_system_prompt()
-                chromecast_ctl_prompt = self.prompt_generator.get_cast_prompt()
+                chromecast_ctl_prompt = self.prompt_manager.get_cast_prompt()
 
                 user_pattern_prompt = self.prompt_manager.get_user_pattern_prompt()
                 demo_user_pattern_prompt = self.prompt_manager.get_user_pattern_demo()
