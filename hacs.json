@@ -1,0 +1,18 @@
+{
+    "name": "Azure OpenAI Conversation RS-Tuned",
+    "description": "Azure OpenAI Conversation RS-Tuned",
+    "domain": "azure_openai_conversation_rs_tuned",
+    "codeowners": [
+        "@amaramusic"
+    ],
+    "requirements": [
+        "openai>=1.12.0,<2.0.0",
+        "requests",
+        "tiktoken==0.7.0"
+    ],
+    "documentation": "https://github.com/bluwhale/ha_openai_conversation_rs",
+    "issue_tracker": "https://github.com/bluewhalekr/ha_openai_conversation_rs/issues",
+    "version": "1.1.0",
+    "iot_class": "local_polling",
+    "render_readme": true
+}

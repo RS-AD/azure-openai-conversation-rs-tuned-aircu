@@ -1,0 +1,25 @@
+name: Validate
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - 'custom_components/openai_conversation_for_rs/**'
+
+
+jobs:
+  validate-hacs:
+    runs-on: azure-openai-conversation-rs-tuned
+    steps:
+      - uses: actions/checkout@v4
+      - name: HACS validation
+        uses: hacs/action@main
+        with:
+          category: integration
+
+  hassfest:
+    runs-on: azure-openai-conversation-rs-tuned
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
