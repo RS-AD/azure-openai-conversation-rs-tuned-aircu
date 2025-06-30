@@ -95,12 +95,14 @@ class GptHaAssistant:
         self,
         deployment_name: str,
         init_prompt: str,
+        cast_prompt: str, 
         ha_automation_script: str,
         user_pattern_prompt: str,
         tool_prompts: list[dict],
         client,
     ):
         self.init_prompt = init_prompt
+        self.cast_prompt = cast_prompt
         self.ha_automation_script = ha_automation_script
         self.user_pattern_prompt = user_pattern_prompt
         self.tool_prompts = tool_prompts
@@ -116,6 +118,8 @@ class GptHaAssistant:
             model_input_messages.append(init_prompt_message.to_dict())
         if self.user_pattern_prompt:
             model_input_messages.append(SystemMessage(content=self.user_pattern_prompt).to_dict())
+        if self.cast_prompt:
+            model_input_messages.append(SystemMessage(content=self.cast_prompt).to_dict())
         # model_input_messages.extend(tv_on_off_example)
         model_input_messages.extend(chat_history)
 
@@ -128,7 +132,7 @@ class GptHaAssistant:
         instructions_tokens = token_encoder.encode(instructions_sum)
 
         chat_history_tokens = token_encoder.encode(json.dumps(chat_history))
-        while len(instructions_tokens) + len(chat_history_tokens) > 128000:
+        while len(instructions_tokens) + len(chat_history_tokens) > 64000: # 128000:
             for i, message in enumerate(chat_history[::-1], start=1):
                 if message["role"] == "user":
                     chat_history = chat_history[: -(i + 3)]

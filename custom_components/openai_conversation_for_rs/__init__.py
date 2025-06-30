@@ -142,6 +142,7 @@ class AzureOpenAIAgent(conversation.AbstractConversationAgent):
             cached_response, speaker_patterns = await asyncio.gather(
                 self.send_cache_request(speaker_id, user_input.text), self.send_pattern_request(SYSTEM_MAC_ADDRESS)
             )
+            # if cache_response exists
             if cached_response:
                 _LOGGER.info("cached_response: %s", cached_response)
                 if not cached_response.get("role"):  # role은 필수 필드
@@ -181,6 +182,7 @@ class AzureOpenAIAgent(conversation.AbstractConversationAgent):
                 system_datetime_prompt = prompt_generator.get_datetime_prompt()
                 system_entities_prompt = prompt_generator.get_entities_system_prompt()
                 system_services_prompt = prompt_generator.get_services_system_prompt()
+                chromecast_ctl_prompt = self.prompt_generator.get_cast_prompt()
 
                 user_pattern_prompt = self.prompt_manager.get_user_pattern_prompt()
                 demo_user_pattern_prompt = self.prompt_manager.get_user_pattern_demo()
@@ -193,6 +195,7 @@ class AzureOpenAIAgent(conversation.AbstractConversationAgent):
 
                 gpt_ha_assistant = GptHaAssistant(
                     deployment_name=self.deployment_name,
+                    cast_prompt=chromecast_ctl_prompt,
                     init_prompt=self.prompt_manager.get_init_prompt(),
                     ha_automation_script=self.prompt_manager.get_ha_automation_script(),
                     user_pattern_prompt=user_pattern_prompt,

@@ -5,6 +5,7 @@ import os
 
 from .const import DOMAIN
 from .prompts.init_prompt import INIT_PROMPT
+from .prompts.cast_prompt import CAST_PROMPT
 from .prompts.user_pattern_prompt import USER_PATTERNS_PROMPT, USER_USAGE_PATTERN_DEMO
 
 file_path = os.path.dirname(__file__)
@@ -87,6 +88,10 @@ class PromptManager:
             return prompt
 
         return self.reset_user_pattern_prompt()
+
+    def get_cast_prompt(self):
+        """Get the chromecast control prompt"""
+        return CAST_PROMPT
 
     def set_init_prompt(self, prompt: str):
         """Set the init prompt."""
