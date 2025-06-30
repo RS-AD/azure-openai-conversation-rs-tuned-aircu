@@ -3,10 +3,10 @@ Azure OpenAI GPT-4o-mini RS-Tuned를 사용한 Home Assistant 대화형 어시�
 
 ## 설치
 1. HACS에서 custom repository로 추가
-   - https://github.com/bluewhalekr/azure-openai-conversation-rs-tuned
+   - https://github.com/RS-AD/azure-openai-conversation-rs-tuned-aircu
 2. 통합구성요소 설치
 3. Home Assistant 재시작
-4. 통합구성요소 > 추가 > Azure OpenAI Conversation RS-Tuned 선택
+4. 통합구성요소 > 추가 > Azure OpenAI Conversation RS-Tuned - AIRCU 선택
 
 ## 설정
 다음 정보가 필요합니다:
