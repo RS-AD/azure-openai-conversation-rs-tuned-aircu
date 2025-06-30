@@ -1,8 +1,8 @@
 {
-  "domain": "azure_openai_conversation_rs_tuned",
-  "name": "Azure OpenAI GPT Conversation RS-Tuned",
-  "documentation": "https://github.com/bluewhalekr/ha_openai_conversation_rs",
-  "issue_tracker": "https://github.com/bluewhalekr/ha_openai_conversation_rs/issues",
+  "domain": "azure_openai_conversation_rs_tuned_aircu",
+  "name": "Azure OpenAI GPT Conversation RS-Tuned AIRCU",
+  "documentation": "https://github.com/RS-AD/azure-openai-conversation-rs-tuned-aircu",
+  "issue_tracker": "https://github.com/RS-AD/azure-openai-conversation-rs-tuned-aircu/issues",
   "dependencies": [
     "conversation"
   ],

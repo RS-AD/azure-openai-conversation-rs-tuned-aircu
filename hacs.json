@@ -1,7 +1,7 @@
 {
-    "name": "Azure OpenAI Conversation RS-Tuned",
-    "description": "Azure OpenAI Conversation RS-Tuned",
-    "domain": "azure_openai_conversation_rs_tuned",
+    "name": "Azure OpenAI Conversation RS-Tuned AIRCU",
+    "description": "Azure OpenAI Conversation RS-Tuned AIRCU",
+    "domain": "azure_openai_conversation_rs_tuned_aircu",
     "codeowners": [
         "@amaramusic"
     ],
@@ -10,8 +10,8 @@
         "requests",
         "tiktoken==0.7.0"
     ],
-    "documentation": "https://github.com/bluwhale/ha_openai_conversation_rs",
-    "issue_tracker": "https://github.com/bluewhalekr/ha_openai_conversation_rs/issues",
+    "documentation": "https://github.com/RS-AD/azure-openai-conversation-rs-tuned-aircu",
+    "issue_tracker": "https://github.com/RS-AD/azure-openai-conversation-rs-tuned-aircu/issues",
     "version": "1.1.0",
     "iot_class": "local_polling",
     "render_readme": true
