@@ -119,6 +119,7 @@ class GptHaAssistant:
         if self.user_pattern_prompt:
             model_input_messages.append(SystemMessage(content=self.user_pattern_prompt).to_dict())
         if self.cast_prompt:
+            print("======================= cat_prompt exists!", flush=True)
             model_input_messages.append(SystemMessage(content=self.cast_prompt).to_dict())
             for message in model_input_messages:
                 print(message)
