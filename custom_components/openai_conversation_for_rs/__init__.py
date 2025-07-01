@@ -208,8 +208,9 @@ class AzureOpenAIAgent(conversation.AbstractConversationAgent):
                 # chat_manager.add_message(SystemMessage(**system_services_prompt))
 
                 chat_input_messages = chat_manager.get_chat_input()
-                chat_input_messages.append(system_entities_prompt)
-                chat_input_messages.append(system_services_prompt)
+                # Have to Recover
+                #chat_input_messages.append(system_entities_prompt)
+                #chat_input_messages.append(system_services_prompt)
 
                 for i in range(len(chat_input_messages)):
                     chat_input_message = chat_input_messages[i]
