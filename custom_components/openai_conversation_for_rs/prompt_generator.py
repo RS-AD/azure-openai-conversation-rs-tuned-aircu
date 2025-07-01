@@ -119,10 +119,10 @@ class GptHaAssistant:
         if self.user_pattern_prompt:
             model_input_messages.append(SystemMessage(content=self.user_pattern_prompt).to_dict())
         if self.cast_prompt:
-            print("======================= cat_prompt exists!", flush=True)
+            _LOGGER.info("======================= cat_prompt exists!")
             model_input_messages.append(SystemMessage(content=self.cast_prompt).to_dict())
             for message in model_input_messages:
-                print(message)
+                _LOGGER.info(message)
         # model_input_messages.extend(tv_on_off_example)
         model_input_messages.extend(chat_history)
 
