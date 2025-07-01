@@ -113,11 +113,13 @@ class GptHaAssistant:
     def add_instructions(self, chat_history: list[dict]):
         """Convert the chat history to JSON data."""
         model_input_messages = []
+        """
         if self.init_prompt:
             init_prompt_message = SystemMessage(content=self.init_prompt)
             model_input_messages.append(init_prompt_message.to_dict())
         if self.user_pattern_prompt:
             model_input_messages.append(SystemMessage(content=self.user_pattern_prompt).to_dict())
+        """    
         if self.cast_prompt:
             _LOGGER.info("======================= cat_prompt exists!")
             model_input_messages.append(SystemMessage(content=self.cast_prompt).to_dict())
